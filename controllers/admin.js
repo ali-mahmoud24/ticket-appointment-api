@@ -177,8 +177,11 @@ exports.getTickets = async (req, res, next) => {
         timeOptions
       );
 
+      const engineerName = `${ticket.engineerId.firstName} ${ticket.engineerId.secondName}`;
+
       return {
         ...ticketSeralized,
+        engineerName,
         time: ticketTime,
         date: ticketDate,
       };
